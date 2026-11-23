@@ -1,0 +1,23 @@
+# Options +FollowSymLinks
+# IndexIgnore */*
+# RewriteEngine on
+
+# if a directory or a file exists, use it directly
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteCond %{REQUEST_URI} !.(?:css|js|jpe?g|gif|png)$ [NC]
+
+# otherwise forward it to index.php
+# RewriteRule ^ index.php [QSA,L]
+
+RewriteEngine On
+RewriteBase /jornalmural/
+
+php_value upload_max_filesize 50M
+php_value post_max_size 64M
+  
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+RewriteRule ^ index.php [QSA,L]

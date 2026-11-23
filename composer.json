@@ -1,0 +1,13 @@
+{
+  "name": "vendor/vendor",
+  "description": "Um jornal mural que mostra informações sobre o colégio Árvore da Felicidade",
+  "autoload": {
+    "psr-4": {
+      "Vendor\\": "src/"
+    }
+  },
+  "require": {
+    "slim/slim": "3.*",
+    "phpmailer/phpmailer": "^6.10"
+  }
+}
